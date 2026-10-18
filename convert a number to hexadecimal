@@ -1,0 +1,20 @@
+class Solution {
+    public String toHex(int num) {
+        
+        if (num == 0) {
+            return "0";
+        }
+        
+        String hexa = "0123456789abcdef";
+        StringBuilder res = new StringBuilder();
+        
+        while (num != 0) {
+            int i = num & 15; 
+            res.append(hexa.charAt(i));
+            num = num >>> 4;  
+        }
+        
+        
+        return res.reverse().toString();
+    }
+}
